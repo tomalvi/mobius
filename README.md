@@ -18,11 +18,11 @@ API REST en Laravel para gestión de pedidos: usuarios, productos, pedidos y lí
 - **Middleware `CheckOrderOwner`**: protege `GET /api/orders/{id}` y `PUT /api/orders/{id}/cancel`, devolviendo 403 si el pedido no pertenece al usuario autenticado y 404 si no existe.
 - **API Resources**: las respuestas de pedidos/productos pasan por `OrderResource`, `OrderItemResource` y `ProductResource` para controlar exactamente qué campos se exponen.
 
-## Instalación (MySQL local / XAMPP)
+## Instalación (MySQL local)
 
-1. Arranca MySQL desde el panel de XAMPP.
+1. Asegúrate de tener el servicio de MySQL corriendo.
 
-2. Crea la base de datos (puedes usar phpMyAdmin o la consola de MySQL):
+2. Crea la base de datos (con un cliente como MySQL Workbench, DBeaver, o la consola):
    ```sql
    CREATE DATABASE order_api;
    ```
@@ -39,7 +39,7 @@ API REST en Laravel para gestión de pedidos: usuarios, productos, pedidos y lí
    cp .env.example .env
    php artisan key:generate
    ```
-   Y ajusta estas variables según tu instalación de XAMPP (normalmente usuario `root` sin contraseña):
+   Y ajusta estas variables según tu instalación local de MySQL:
    ```
    DB_CONNECTION=mysql
    DB_HOST=127.0.0.1
